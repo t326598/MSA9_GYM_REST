@@ -123,17 +123,18 @@ public class ReservationController {
     // 회원 내 예약 목록
     @GetMapping("/user/myPage/ptList/{no}")
     public ResponseEntity<?> getMyReservation(
-            @PathVariable("no") Long no,
+        @PathVariable("no") Long no,
             Page page) {
-        try {
-                log.info("경로 유저 번호 : " + no);
-
-            List<Reservation> reservationCount = reservationService.userByList(no, page);
-            long disabledCount = reservationService.disabledCount(no);
-
-            log.info("디스에이블 카운트 : " + disabledCount);
-            
-            List<Reservation> reservationList = reservationService.userByList(no, page);
+                try {
+                    log.info("경로 유저 번호 : " + no);
+                    
+                    List<Reservation> reservationCount = reservationService.userByList(no, page);
+                    long disabledCount = reservationService.disabledCount(no);
+                    
+                    log.info("디스에이블 카운트 : " + disabledCount);
+                    
+                    List<Reservation> reservationList = reservationService.userByList(no, page);
+                    log.info("예약 데이터 empty? : " + reservationList);
 
             Map<String, Object> response = new HashMap<String, Object>();
             response.put("reservationList", reservationList);

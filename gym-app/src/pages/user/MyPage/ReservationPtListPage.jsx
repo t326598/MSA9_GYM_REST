@@ -14,6 +14,10 @@ const ReservationPtListPage = () => {
   const { no } = useParams()
 
   useEffect(() => {
+    console.log("유저인포 있나? " + userInfo);
+    console.log("유저넘버 있나? " + userInfo.no);
+    console.log("유저넘버랑 파람no랑 같나? " + no);
+
 
     if (!isLogin) {
       Swal.alert('로그인을 시도해주세요', '로그인 화면으로 이동합니다', 'warning', () => {
@@ -23,6 +27,7 @@ const ReservationPtListPage = () => {
     }
 
     if (!userInfo || userInfo.no != no) {
+      
       Swal.alert('잘못된 접근입니다.', '메인 화면으로 이동합니다.', 'warning', () => {
         navigate('/');
       });
