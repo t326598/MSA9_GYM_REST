@@ -57,7 +57,7 @@ const AttendanceTable = () => {
   // 출석 리스트 가져오기
   const fetchAttendanceList = async (pageNumber = 1) => {
     try {
-      const response = await fetch(`http://localhost:8080/admin/attendance/list?page=${pageNumber}&keyword=${option.keyword}`);
+      const response = await fetch(`http://192.168.30.63:8080/admin/attendance/list?page=${pageNumber}&keyword=${option.keyword}`);
       if (response.ok) {
         const { attendanceList, option: newOption, page: newPage } = await response.json();
         setAttendanceList(attendanceList);

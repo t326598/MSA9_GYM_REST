@@ -29,7 +29,7 @@ const TicketBuyList = () => {
   useEffect(() => {
     if (userNo) {
       // API 호출하여 구매 내역 데이터 가져오기
-      fetch(`http://localhost:8080/buyList/users/${userNo}`)
+      fetch(`http://192.168.30.63:8080/buyList/users/${userNo}`)
         .then(response => response.json())
         .then(data => {
           console.log('구매 리스트 데이터:', data);

@@ -46,7 +46,7 @@ const ReservationListContainer = () => {
         setPage(data.page)
       } else {
         response = await fetch(
-          `http://localhost:8080/admin/reservation/list?page=${pageNumber}&rows=${currentOption.rows}&keyword=${currentOption.keyword}&orderCode=${currentOption.orderCode}&code=${currentOption.code}`
+          `http://192.168.30.63:8080/admin/reservation/list?page=${pageNumber}&rows=${currentOption.rows}&keyword=${currentOption.keyword}&orderCode=${currentOption.orderCode}&code=${currentOption.code}`
         );
         if (response.ok) {
           const { reservationList, page: newPage } = await response.json();

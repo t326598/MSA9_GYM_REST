@@ -227,7 +227,7 @@ useEffect(() => {
                       </label>
                     </div>
 
-                        <div>${roles.isTrainer}</div>
+                        <div>{roles.isTrainer}</div>
                     {/* 수정 및 삭제 버튼 */}
                     {(roles.isAdmin || roles.isTrainer) && (
                       <div style={{ marginTop: "10px" }}>

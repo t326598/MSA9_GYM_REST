@@ -14,7 +14,7 @@ function Ranking() {
      // 서버로부터 랭킹 데이터를 받아오는 로직
      const fetchRankingData = async () => {
        try {
-         const response = await fetch('http://localhost:8080/ranking');
+         const response = await fetch('http://192.168.30.63:8080/ranking');
          if (response.ok) {
            const data = await response.json(); // JSON 응답을 파싱
            console.log('userInfo : ', userInfo?.id);

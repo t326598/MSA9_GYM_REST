@@ -40,7 +40,7 @@ const JoinContainer = () => {
       
           try {
               // 아이디 중복 확인
-              const response = await fetch(`http://localhost:8080/check/${username}`, {
+              const response = await fetch(`http://192.168.30.63:8080/check/${username}`, {
                   method: 'GET'
               });
               console.log(response);
