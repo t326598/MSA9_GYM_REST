@@ -41,7 +41,7 @@ public interface AttendanceService {
     List<Attendance> searchAttendance(String searchKeyword) throws Exception;
 
     // 유저별 출석 횟수 조회
-    int getAttendanceCountByUserNo(int userNo) throws Exception; // 여기에 추가
+    int getAttendanceCountByUserNo(int userNo) throws Exception; 
 
     // 출석 인원수 조회
     public int listCount() throws Exception;
