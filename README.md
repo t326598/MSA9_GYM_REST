@@ -339,18 +339,6 @@
 
 </details>
 
-<details>
-<summary>QR 컨트롤러</summary>
-
-### POST
-- **엔드포인트:** `/generate-qr-code`
-- **설명:** QR 코드를 생성합니다.
-
-### POST
-- **엔드포인트:** `/generate-qr-code/delete`
-- **설명:** 생성된 QR 코드를 삭제합니다.
-
-</details>
 
 <details>
 <summary>Attendance 컨트롤러</summary>
