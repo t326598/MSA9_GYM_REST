@@ -24,6 +24,7 @@ const ReservationListPage = () => {
     }
 
     if (!userInfo) {
+      
       Swal.alert('잘못된 접근입니다.', '메인 화면으로 이동합니다.', 'warning', () => {
         navigate('/');
       });

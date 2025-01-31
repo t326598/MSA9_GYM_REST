@@ -27,7 +27,7 @@ const ReservationPtList = ({ reservations, handlePageChange, page, fetchList, pt
     setIsModalOpen(false);
   };
 
-  // useEffect(() => {
+  useEffect(() => {
   //    if (isLoading) {
   //      // 로딩 중일 때는 아무 동작도 하지 않음
   //      return;
@@ -41,14 +41,14 @@ const ReservationPtList = ({ reservations, handlePageChange, page, fetchList, pt
   //      return;
   //    }
    
-  //    // 로그인되어 있다면 userInfo를 확인
-  //    if (userInfo && userInfo.no) {
-  //      setUserNo(userInfo.no);
-  //      console.log('userNo:', userInfo.no);
-  //    } else {
-  //      console.log('userInfo가 없거나 userNo가 없습니다.');
-  //    }
-  //  }, [isLoading, userInfo, navigate]);
+     // 로그인되어 있다면 userInfo를 확인
+     if (userInfo && userInfo.no) {
+       setUserNo(userInfo.no);
+       console.log('userNo:', userInfo.no);
+     } else {
+       console.log('userInfo가 없거나 userNo가 없습니다.');
+     }
+   }, [isLoading, userInfo, navigate]);
 
 
   return (

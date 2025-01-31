@@ -14,6 +14,11 @@ const ReservationInsertPage = () => {
 
   useEffect(() => {
 
+
+    console.log("유저인포 있나? " + userInfo);
+    console.log("유저넘버랑 트레이너넘버랑 같냐? " + no);
+    console.log("유저넘버랑 트레이너넘버랑 같냐?? " + userInfo.trainerNo);
+
     if (!isLogin) {
       Swal.alert('로그인을 시도해주세요.', '로그인 화면으로 이동합니다.', 'warning', () => {
         navigate('/login');
