@@ -54,9 +54,10 @@ console.log(storedToken + "이거나옴?")
         loginSetting(authorization, data);
   
         // 로그인 성공 alert
-        Swal.alert('로그인 성공', '메인 화면으로 이동합니다.', 'success',
-            () => navigate("/")
-        );
+        
+        Swal.alert('로그인 성공', '메인 화면으로 이동합니다.', 'success');
+      navigate("/")
+      location.reload();
   
         return jwt; // JWT 토큰 반환
   

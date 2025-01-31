@@ -227,6 +227,7 @@ useEffect(() => {
                       </label>
                     </div>
 
+                        <div>${roles.isTrainer}</div>
                     {/* 수정 및 삭제 버튼 */}
                     {(roles.isAdmin || roles.isTrainer) && (
                       <div style={{ marginTop: "10px" }}>
@@ -274,7 +275,7 @@ useEffect(() => {
                 </div>
               ))}
             </div>
-          ) : roles.isAdmin ? (
+          ) : (roles.isAdmin || roles.isTrainer) ? (
             <div className="board-border" style={{ marginTop: "20px", marginBottom: "20px" }}>
               <form onSubmit={answerInsert}>
                 <div className="board-input-box">
