@@ -78,7 +78,7 @@ console.log(storedToken + "이거나옴?")
 
     // JWT 쿠키 삭제
     Cookies.remove("jwt")
-    sessionStorage.removeItem("jwt")
+    localStorage.removeItem("jwt")
     sessionStorage.removeItem("jwtToken")
     localStorage.removeItem('jwtToken');
     //  로그인 여부 : false
@@ -155,7 +155,7 @@ console.log(storedToken + "이거나옴?")
     setIsLoading(true);
   
     // 쿠키에서 jwt 가져오기
-    const jwt = Cookies.get("jwt") || sessionStorage.getItem("jwt");
+    const jwt = Cookies.get("jwt") || localStorage.getItem("jwt");
   
     if (!jwt) {
       // JWT가 없는 경우 바로 로딩 종료
