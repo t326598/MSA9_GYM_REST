@@ -44,7 +44,13 @@ console.log(storedToken + "이거나옴?")
       console.log(`authorization: ${authorization}`);
       console.log(`jwt: ${jwt}`);
   
-   
+      // 로그인 성공 ✅
+      if (status === 200) {
+        // 💍 JWT 를 로컬 스토리지에 저장
+        localStorage.setItem('jwtToken', jwt);
+        const storedToken = localStorage.getItem('jwtToken');
+        console.log(`storedToken after setting: ${storedToken}`);
+        
         // storedToken이 존재하면 쿠키에 저장
         if (storedToken !== null) {
           Cookies.set("jwt", jwt, { expires: 5 });  // 5일 후 만료
