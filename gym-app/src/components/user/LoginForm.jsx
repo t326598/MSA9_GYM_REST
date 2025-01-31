@@ -22,7 +22,7 @@ const LoginForm = () => {
       setRememberId(true); // 아이디 저장 체크 활성화
     }
 
-    if (storedToken ){
+    if (storedToken) {
       setAutoLogin(true); // 자동 로그인 체크 활성화
     }
   }, []);
@@ -50,9 +50,18 @@ const LoginForm = () => {
     login(id, password).then((token) => {
         if (token) {
             if (autoLogin) {
-                console.log("자동 로그인 켜짐 - 쿠키에 저장");
-                localStorage.setItem('jwtToken', true); // 자동 로그인: 토큰 존재 여부를 저장
-            } 
+                console.log("이거나옴1");
+                localStorage.setItem('jwtToken', token); // 자동 로그인: 로컬 스토리지에 토큰 저장
+            } else {
+                console.log("이거나옴23");
+                sessionStorage.setItem('jwt', token); // 세션 로그인: 세션 스토리지에 토큰 저장
+            }
+            // 여기서 jwtToken을 다시 가져와 확인할 수 있습니다
+            const storedToken = localStorage.getItem('jwtToken');
+            console.log(`storedToken after setting: ${storedToken}`);
+            if (storedToken !== null) {
+                Cookies.set("jwt", token, { expires: 5 }); // 쿠키에 토큰 저장
+            }
         } else {
             // 로그인 실패 시
             console.log("로그인 실패 - 토큰이 유효하지 않음");
