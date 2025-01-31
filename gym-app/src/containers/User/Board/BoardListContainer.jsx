@@ -20,7 +20,7 @@ const BoardListContainer = () => {
   const fetchList = async (pageNumber = 1, currentOption = option) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/board?page=${pageNumber}&rows=${currentOption.rows}&keyword=${currentOption.keyword}&orderCode=${currentOption.orderCode}`
+        `http://192.168.30.63:8080/board?page=${pageNumber}&rows=${currentOption.rows}&keyword=${currentOption.keyword}&orderCode=${currentOption.orderCode}`
       );
       if (response.ok) {
         const { boardList, page: newPage } = await response.json();

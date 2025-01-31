@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserCount = async () => {
       try {
-        const response = await fetch('http://localhost:8080/admin/attendance/userCount'); // 백엔드 API URL
+        const response = await fetch('http://192.168.30.63:8080/admin/attendance/userCount'); // 백엔드 API URL
         if (response.ok) {
           const data = await response.json(); // JSON 응답을 파싱
           setUserCount(data.userCount); // userCount를 상태로 저장
