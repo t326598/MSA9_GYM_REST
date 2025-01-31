@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import QRCode from 'qrcode';
 import { LoginContext } from '../../../contexts/LoginContextProvider';
-import { useNavigate } from 'react-router-dom'; // useNavigate 임포트
-import Swal from 'sweetalert2'; // Swal 임포트
+import { useNavigate } from 'react-router-dom'; 
+import Swal from 'sweetalert2'; 
 import './QrCode.css';
 
 const QrCode = () => {
@@ -52,7 +52,7 @@ const QrCode = () => {
               title: '이용권을 구매해주세요',
               text: '헬스장 입장 시 이용권이 필요합니다.',
             }).then(() => {
-              navigate('/ticket/ChoiceTicket'); // 알림을 닫은 후 구매 페이지로 이동
+              navigate('/ticket/ChoiceTicket'); 
             });
           } else {
             // 정상 상태인 티켓이 있으면 QR 코드 생성
