@@ -4,9 +4,9 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import { useDate } from "../../../contexts/DateContextProvider";
 import * as plan from '../../../apis/plan'
 
-const PlanInsertModal = ({times24Hour, times12Hour, setupDropdown, onClose}) => {
+const PlanInsertModal = ({times24Hour, times12Hour, setTimes24Hour, setTimes12Hour, setupDropdown, onClose}) => {
 
-  const { currentDate, formatDate, getDataListByDate, setIsPlanInsertVisible } = useDate();
+  const { currentDate, getDataListByDate, setIsPlanInsertVisible } = useDate();
 
   const [planName, setPlanName] = useState('')
   const [planContent, setPlanContent] = useState('')

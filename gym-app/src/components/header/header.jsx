@@ -88,7 +88,7 @@ function Header() {
                             <ul>
                                 <li><Link to="/ranking">출석 랭킹</Link></li>
                                 <li><Link to="/ticket/ChoiceTicket">이용권 구매</Link></li>
-                                <li><Link to="/plan/plan">운동계획표</Link></li>
+                                <li><a href="/plan/plan">운동계획표</a></li>
                                 <li><Link to={`/reservation/reservationInsert/${userInfo?.trainerNo}`}>PT 예약</Link></li>
                                 <li><Link to="/boardList">문의게시판</Link></li>
                             </ul>

@@ -28,19 +28,14 @@ const DateContextProvider = ({children}) => {
   const navigate = useNavigate();
 
   const getDataListByDate = async (date) => {
-    // console.log("getDataListByDate")
+
     const formDate = new Date(date)
     const year = formDate.getFullYear();
     const month = (formDate.getMonth() + 1);
     const day = formDate.getDate();
-    // console.log(`year/month/day : ${year}/${month}/${day}`)
+
     const response = await plan.getPlansbyDate(year, month, day)
     const data = await response.data
-
-    // console.dir(data)
-    // console.dir(data.comment)
-    // console.dir(data.planEvents)
-    // console.dir(data.reservationEvents)
 
     setComment(data.comment)
     setPlanList(data.planEvents)
@@ -59,11 +54,6 @@ const DateContextProvider = ({children}) => {
     const response = await plan.getPlansbyDateUserNo(year, month, day, userNo)
     const data = await response.data
 
-    // console.dir(data)
-    // console.dir(data.comment)
-    // console.dir(data.planEvents)
-    // console.dir(data.reservationEvents)
-
     setComment(data.comment)
     setPlanList(data.planEvents)
     setRsvList(data.reservationEvents)
@@ -73,12 +63,7 @@ const DateContextProvider = ({children}) => {
   const getDataList = async () => {
     const response = await plan.getPlans()
     const data = await response.data
-    // console.dir(response)
-    // console.dir(data)
-    // console.dir(data.comment)
-    // console.dir(data.planEvents)
-    // console.dir(data.reservationEvents)
-    
+
     setComment(data.comment)  
     setPlanList(data.planEvents)
     setRsvList(data.reservationEvents)

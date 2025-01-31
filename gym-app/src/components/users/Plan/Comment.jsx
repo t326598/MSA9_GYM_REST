@@ -9,7 +9,7 @@ const Comment = () => {
   const { roles } = useContext(LoginContext)
   const location = useLocation();
 
-  const { currentDate, setCurrentDate, comment, getPlansbyDateUserNo } = useDate();
+  const { currentDate, comment, getPlansbyDateUserNo } = useDate();
 
   const [ccontent, setCcontent] = useState('');
   const [fcontent, setFcontent] = useState('');
@@ -62,7 +62,6 @@ const Comment = () => {
   const handleInsertComment = async () => {
     const params = new URLSearchParams(location.search);
     const userNo = params.get('userNo');
-    // console.log("comment userNo: " + userNo);
     
     const commentDate = new Date(currentDate).setHours(0,0,0,0);
     try {
@@ -72,7 +71,6 @@ const Comment = () => {
         userNo: userNo,
         commentDate: commentDate
       }
-      // console.log("comment Insert : ", data);
       await plan.insertComment(data)
     } catch (error) {
       console.error('오류 발생:', error.response ? error.response.data : error.message);
