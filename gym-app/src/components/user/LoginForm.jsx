@@ -22,7 +22,7 @@ const LoginForm = () => {
       setRememberId(true); // 아이디 저장 체크 활성화
     }
 
-    if (storedToken) {
+    if (storedToken ){
       setAutoLogin(true); // 자동 로그인 체크 활성화
     }
   }, []);
@@ -41,22 +41,25 @@ const LoginForm = () => {
 
     // 아이디 저장 처리
     if (rememberId) {
-      Cookies.set('remember-id', id, { expires: 7 }); // 쿠키에 아이디 저장, 7일 동안 유지
+        Cookies.set('remember-id', id, { expires: 7 }); // 쿠키에 아이디 저장, 7일 동안 유지
     } else {
-      Cookies.remove('remember-id'); // 쿠키에서 아이디 삭제
+        Cookies.remove('remember-id'); // 쿠키에서 아이디 삭제
     }
 
     // 로그인 처리
     login(id, password).then((token) => {
-      if (autoLogin) {
-        console.log("이거나옴1")
-        localStorage.setItem('jwtToken', token); // 자동 로그인: 로컬 스토리지에 토큰 저장
-      } else {
-        console.log("이거나옴23")
-        sessionStorage.setItem('jwtToken', token); // 세션 로그인: 세션 스토리지에 토큰 저장
-      }
+        if (token) {
+            if (autoLogin) {
+                console.log("자동 로그인 켜짐 - 쿠키에 저장");
+                localStorage.setItem('jwtToken', true); // 자동 로그인: 토큰 존재 여부를 저장
+            } 
+        } else {
+            // 로그인 실패 시
+            console.log("로그인 실패 - 토큰이 유효하지 않음");
+        }
     });
-  };
+};
+
 
   return (
 

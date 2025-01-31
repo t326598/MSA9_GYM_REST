@@ -21,56 +21,64 @@ const LoginContextProvider = ({ children }) => {
 
   // 페이지 이동
   const navigate = useNavigate()
-  const storedToken = localStorage.getItem('jwtToken');
+  const storedToken = localStorage.getItem('autoLogin');
+console.log(storedToken + "이거나옴?")
 
   // 🔐 로그인 함수
   const login = async (id, password) => {
-    console.log(`username : ${id}`);
-    console.log(`password) : ${password}`);
-
+    console.log(`username: ${id}`);
+    console.log(`password: ${password}`);
+  
     try {
-      const response = await auth.login(id, password)
-      const data = response.data      // 👩‍💼 {user}
-      const status = response.status
-      const headers = response.headers
-      const authorization = headers.authorization
-      const jwt = authorization.replace("Bearer ", "")
-
-      console.log(`data : ${data}`);
-      console.dir(data)
-      console.log(`status : ${status}`);
-      console.log(`headers : ${headers}`);
-      console.log(`authorization : ${authorization}`);
-      console.log(`jwt : ${jwt}`);
-
+      const response = await auth.login(id, password);
+      const data = response.data;      // 👩‍💼 {user}
+      const status = response.status;
+      const headers = response.headers;
+      const authorization = headers.authorization;
+      const jwt = authorization.replace("Bearer ", "");
+  
+      console.log(`data: ${data}`);
+      console.dir(data);
+      console.log(`status: ${status}`);
+      console.log(`headers: ${headers}`);
+      console.log(`authorization: ${authorization}`);
+      console.log(`jwt: ${jwt}`);
+  
       // 로그인 성공 ✅
-      if( status == 200 ) {
-
-        // 💍 JWT 를 쿠키에 등록
-        if(storedToken){
-        Cookies.set("jwt", jwt, { expires: 5 })  // 5일후 만료
-      }
-      else{
-        sessionStorage.setItem('jwt', jwt, { expires: 5 }); 
-      }
-
-        // 로그인 세팅 -  loginSetting(🎫💍, 👩‍💼)
-        loginSetting(authorization, data)
+      if (status === 200) {
+        // 💍 JWT 를 로컬 스토리지에 저장
+        localStorage.setItem('jwtToken', jwt);
+        const storedToken = localStorage.getItem('jwtToken');
+        console.log(`storedToken after setting: ${storedToken}`);
         
+        // storedToken이 존재하면 쿠키에 저장
+        if (storedToken !== null) {
+          Cookies.set("jwt", jwt, { expires: 5 });  // 5일 후 만료
+        } else {
+          sessionStorage.setItem('jwt', jwt);
+        }
+  
+        // 로그인 세팅 - loginSetting(authorization, data)
+        loginSetting(authorization, data);
+  
         // 로그인 성공 alert
         Swal.alert('로그인 성공', '메인 화면으로 이동합니다.', 'success',
-          () => navigate("/")
-        )
-
+            () => navigate("/")
+        );
+  
+        return jwt; // JWT 토큰 반환
+  
       }
-
+  
     } catch (error) {
       // 로그인 실패 alert
-      Swal.alert('로그인 실패', '아이디 또는 비밀번호가 일치하지 않습니다', 'error')
-      console.log(`로그인 실패`);
+      Swal.alert('로그인 실패', '아이디 또는 비밀번호가 일치하지 않습니다', 'error');
+      console.log('로그인 실패');
+      return false;
     }
-    
-  }
+  };
+  
+  
 
   const logoutSetting = () => {
     // Authorization 헤더 초기화
@@ -79,6 +87,7 @@ const LoginContextProvider = ({ children }) => {
     // JWT 쿠키 삭제
     Cookies.remove("jwt")
     sessionStorage.removeItem("jwt")
+    sessionStorage.removeItem("jwtToken")
     //  로그인 여부 : false
     setIsLogin(false)
     localStorage.removeItem("isLogin")
