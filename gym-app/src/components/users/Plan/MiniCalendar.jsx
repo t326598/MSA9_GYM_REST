@@ -49,7 +49,7 @@ const MiniCalendar = () => {
     }
 
     // Next month dates
-    const remainingCells = 42 - days.length; // 6 rows * 7 columns
+    const remainingCells = 42 - days.length; 
     for (let i = 1; i <= remainingCells; i++) {
       days.push({ date: i, isCurrentMonth: false });
     }
@@ -59,12 +59,10 @@ const MiniCalendar = () => {
 
   const handlePrevMonth = () => {
     setDisplayDate(new Date(displayDate.getFullYear(), displayDate.getMonth() - 1, 1));
-    // renderCalendar(displayDate);
   };
 
   const handleNextMonth = () => {
     setDisplayDate(new Date(displayDate.getFullYear(), displayDate.getMonth() + 1, 1));
-    // renderCalendar(displayDate);
   };
 
   const handleDateClick = (date) => {

@@ -8,13 +8,10 @@ import { LoginContext } from '../../../contexts/LoginContextProvider';
 const MainCalendar = () => {
 
   const { currentDate, setCurrentDate, planList, rsvList, setClickedPlan, setClickedRsv,
-          isPlanInfoVisible, setIsPlanInfoVisible,
-          isRsvInfoVisible, setIsRsvInfoVisible,
-          isPlanInsertVisible, setIsPlanInsertVisible } = useDate();
+          setIsPlanInfoVisible, setIsRsvInfoVisible, setIsPlanInsertVisible } = useDate();
   const { roles } = useContext(LoginContext);
   const [events, setEvents] = useState([]);
   const calendarRef = useRef(null);
-  const [dateClicked, setDateClicked] = useState(false);
 
   useEffect(() => {
     var formattedevents = [planList, rsvList].flatMap(events =>
@@ -45,7 +42,6 @@ const MainCalendar = () => {
       const calendarApi = calendarRef.current.getApi();
       calendarApi.gotoDate(newDate);
     }
-    // handleAllModal()
     setCurrentDate(newDate);
   };
 
@@ -54,16 +50,9 @@ const MainCalendar = () => {
     setCurrentDate(newDate);
     if (calendarRef.current) {
       const calendarApi = calendarRef.current.getApi();
-      // handleAllModal()
       calendarApi.gotoDate(newDate);
     }
   };
-
-  // const handleAllModal = () => {
-  //   // setIsPlanInsertVisible(false);
-  //   setIsPlanInfoVisible(false);
-  //   setIsRsvInfoVisible(false);
-  // }
 
   const handleEvnetClick = (info) => {
 

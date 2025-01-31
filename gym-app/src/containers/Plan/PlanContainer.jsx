@@ -13,7 +13,7 @@ const PlanContainer = () => {
 
   const { roles, autoLogin, isLoading } = useContext(LoginContext)
   
-  const { currentDate, setCurrentDate, comment, planList, rsvList, getDataList, getPlansbyUserNo,
+  const { comment, planList, rsvList, getDataList, getPlansbyUserNo,
     isPlanInsertVisible, setIsPlanInsertVisible,
     isPlanInfoVisible, setIsPlanInfoVisible, 
     isRsvInfoVisible, setIsRsvInfoVisible } = useDate();
@@ -144,7 +144,7 @@ const PlanContainer = () => {
       <PlanContent
         comment={comment} planList={planList} rsvList={rsvList} />
       {isPlanInsertVisible && <PlanInsertModal 
-        times24Hour={times24Hour} times12Hour={times12Hour} setupDropdown={setupDropdown} onClose={handleClosePlanInsert} />}
+        times24Hour={times24Hour} times12Hour={times12Hour} setTimes24Hour={setTimes24Hour} setTimes12Hour={setTimes12Hour} setupDropdown={setupDropdown} onClose={handleClosePlanInsert} />}
       {isPlanInfoVisible && <PlanInfoModal 
         times24Hour={times24Hour} times12Hour={times12Hour} setupDropdown={setupDropdown}
         planList={planList} onClose={handleClosePlanInfo} />}

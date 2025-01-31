@@ -11,7 +11,7 @@ const PlanInfoModal = ({times24Hour, times12Hour, setupDropdown, onClose}) => {
 
   const { roles } = useContext(LoginContext)
   
-  const { currentDate, clickedPlan, formatPlanTime, isPlanInfoVisible, setIsPlanInfoVisible, getDataListByDate } = useDate();
+  const { currentDate, clickedPlan, formatPlanTime, setIsPlanInfoVisible, getDataListByDate } = useDate();
 
   const [id, setId] = useState('');
   const [title, setTitle] = useState('')
@@ -22,11 +22,8 @@ const PlanInfoModal = ({times24Hour, times12Hour, setupDropdown, onClose}) => {
 
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
-  const [startEditTime, setStartEditTime] = useState();
-  const [endEditTime, setEndEditTime] = useState();
   const [formattedDate, setFormattedDate] = useState('');
 
-  // ⚪❗ 초기값 세팅하기
   const [startEdit, setStartEdit] = useState(new Date(clickedPlan.eventStart))
   const [endEdit, setEndEdit] = useState(new Date(clickedPlan.eventEnd))
 
