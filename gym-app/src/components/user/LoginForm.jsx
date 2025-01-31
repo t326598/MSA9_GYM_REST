@@ -54,7 +54,7 @@ const LoginForm = () => {
                 localStorage.setItem('jwtToken', token); // 자동 로그인: 로컬 스토리지에 토큰 저장
             } else {
                 console.log("이거나옴23");
-                sessionStorage.setItem('jwt', token); // 세션 로그인: 세션 스토리지에 토큰 저장
+                localStorage.setItem('jwt', token, { expires: 5 }); // 세션 로그인: 세션 스토리지에 토큰 저장
             }
             // 여기서 jwtToken을 다시 가져와 확인할 수 있습니다
             const storedToken = localStorage.getItem('jwtToken');
