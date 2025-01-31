@@ -124,7 +124,7 @@ const ReservationInsert = ({ trainerProfile, reservationByTrainer, no, ptCount }
         <div className="trainer-info">
           <div className="info-container">
             <img
-              src={`/api/files/${trainerProfile.trainerNo}/thumbnail`}
+              src={`/api/files/${trainerProfile.no}/thumbnail`}
               alt="트레이너이미지"
               className="card-img-top"
               style={{

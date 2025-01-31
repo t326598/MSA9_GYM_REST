@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 
 const PlanContainer = () => {
 
-  const { roles, autoLogin } = useContext(LoginContext)
+  const { roles, autoLogin, isLoading } = useContext(LoginContext)
   
   const { currentDate, setCurrentDate, comment, planList, rsvList, getDataList, getPlansbyUserNo,
     isPlanInsertVisible, setIsPlanInsertVisible,
@@ -31,6 +31,9 @@ const PlanContainer = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if(isLoading){
+        return;
+      }
       await autoLogin();
       
       const params = new URLSearchParams(location.search);

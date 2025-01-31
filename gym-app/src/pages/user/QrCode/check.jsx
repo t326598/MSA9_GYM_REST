@@ -19,7 +19,7 @@ const Check = () => {
   const handleAttendanceCheck = async () => {
     try {
 
-      const response = await checkAttendance.check(uuid);
+      const response = await checkAttendance.check(uuid, userNo);
 
       const status = response.status
 

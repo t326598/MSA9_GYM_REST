@@ -14,9 +14,6 @@ const ReservationPtListPage = () => {
   const { no } = useParams()
 
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
 
     if (!isLogin) {
       Swal.alert('로그인을 시도해주세요', '로그인 화면으로 이동합니다', 'warning', () => {
@@ -33,7 +30,7 @@ const ReservationPtListPage = () => {
     }
   }, [isLoading, isLogin, userInfo, no, navigate]);
 
-  if (isLoading || !isLogin || !userInfo || userInfo.no != no) {
+  if (!isLogin || !userInfo || userInfo.no != no) {
     return null;
   }
 

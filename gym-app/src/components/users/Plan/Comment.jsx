@@ -73,16 +73,16 @@ const Comment = () => {
         commentDate: commentDate
       }
       // console.log("comment Insert : ", data);
-      plan.insertComment(data)
+      await plan.insertComment(data)
     } catch (error) {
       console.error('오류 발생:', error.response ? error.response.data : error.message);
     }
-    getPlansbyDateUserNo(currentDate)
+    await getPlansbyDateUserNo(currentDate)
     setIsEditMode(false)
   }
 
   const handleUpdateComment = async () => {
-    if(ccontent!== comment.ccontent || fcontent !== comment.fcontent) {
+    if(ccontent !== comment.ccontent || fcontent !== comment.fcontent) {
       const params = new URLSearchParams(location.search);
       const userNo = params.get('userNo');
       console.log("comment userNo: " + userNo);
@@ -96,13 +96,13 @@ const Comment = () => {
           commentDate: commentDate,
           no: no
         }
-        plan.updateComment(data)
+        await plan.updateComment(data);
       } catch (error) {
         console.error('오류 발생:', error.response ? error.response.data : error.message);
       }
     }
-    getPlansbyDateUserNo(currentDate)
-    setIsEditMode(false)
+    await getPlansbyDateUserNo(currentDate);
+    setIsEditMode(false);
   }
   
   return (

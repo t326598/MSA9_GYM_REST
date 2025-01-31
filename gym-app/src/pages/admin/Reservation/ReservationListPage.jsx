@@ -12,9 +12,9 @@ const ReservationListPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
+    // if (isLoading) {
+    //   return;
+    // }
 
     if (!isLogin) {
       Swal.alert('로그인을 시도해주세요', '로그인 화면으로 이동합니다', 'warning', () => {
@@ -41,7 +41,7 @@ const ReservationListPage = () => {
 
   }, [isLoading, isLogin, userInfo, roles, navigate]);
 
-  if (isLoading || !isLogin || !userInfo || roles.isUser) {
+  if (!isLogin || !userInfo || roles.isUser) {
     return null;
   }
 

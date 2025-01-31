@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction';
 import { useDate } from '../../../contexts/DateContextProvider';
+import { LoginContext } from '../../../contexts/LoginContextProvider';
 
 const MainCalendar = () => {
 
@@ -10,6 +11,7 @@ const MainCalendar = () => {
           isPlanInfoVisible, setIsPlanInfoVisible,
           isRsvInfoVisible, setIsRsvInfoVisible,
           isPlanInsertVisible, setIsPlanInsertVisible } = useDate();
+  const { roles } = useContext(LoginContext);
   const [events, setEvents] = useState([]);
   const calendarRef = useRef(null);
   const [dateClicked, setDateClicked] = useState(false);
@@ -94,7 +96,9 @@ const MainCalendar = () => {
   const handleDateClick = (info) => {
     console.log("handleDateClick")
     setCurrentDate(new Date(info.date));
-    setIsPlanInsertVisible(true);
+    if (roles.isUser) {
+      setIsPlanInsertVisible(true);
+    }
   };
 
   return (

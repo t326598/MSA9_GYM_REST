@@ -3,5 +3,6 @@ import api from './api';
 
 
 
-export const check = (uuid) => api.get(`/user/attendance/check/${uuid}`)
+export const check = (uuid,qrNo) => api.get(`/user/attendance/check/${qrNo}/${uuid}`)
 
+ 

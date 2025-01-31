@@ -10,7 +10,7 @@ export const useDate = () => useContext(DateContext);
 
 const DateContextProvider = ({children}) => {
 
-  const { roles, autoLogin } = useContext(LoginContext)
+  const { roles, autoLogin, isLoading } = useContext(LoginContext)
   const location = useLocation();
 
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -112,6 +112,10 @@ const DateContextProvider = ({children}) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      if(isLoading){
+        return;
+      }
+
       await autoLogin();
 
       const params = new URLSearchParams(location.search);

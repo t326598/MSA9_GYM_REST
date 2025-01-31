@@ -200,3 +200,13 @@ ADD CONSTRAINT `FK_users_TO_qr_code_1` FOREIGN KEY (`user_no`) REFERENCES `users
 
 
 
+/* QR코드 이벤트 핸들러 */
+
+SET GLOBAL event_scheduler = ON;
+
+SELECT * FROM qr_code;
+
+CREATE EVENT delete_expired_qr_codes
+ON SCHEDULE EVERY 1 MINUTE  -- 1분마다 실행 QR코드 삭제
+DO
+DELETE FROM qr_code WHERE created_at <= NOW() - INTERVAL 60 SECOND;

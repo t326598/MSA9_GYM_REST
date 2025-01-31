@@ -13,9 +13,6 @@ const ReservationInsertPage = () => {
   const { no } = useParams();
 
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
 
     if (!isLogin) {
       Swal.alert('로그인을 시도해주세요.', '로그인 화면으로 이동합니다.', 'warning', () => {
@@ -32,7 +29,7 @@ const ReservationInsertPage = () => {
     }
   }, [isLoading, isLogin, userInfo, no, navigate]);
 
-  if (isLoading || !isLogin || !userInfo || userInfo.trainerNo != no || userInfo.trainerNo == 0) {
+  if (!isLogin || !userInfo || userInfo.trainerNo != no || userInfo.trainerNo == 0) {
     return null;
   }
 
