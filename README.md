@@ -35,20 +35,21 @@
 - 2025-01-13 ~ 2024-01-22
 
 ### :bulb: 담당 개발기능 및 구현
-- **예약 기능** : **예약 CRUD**
+- **회원 기능** : **회원 CRUD**
   <p>
-    권한이 트레이너인 user의 예약 데이터로 필터링하여 예약 신청 / 트레이너별 예약건 조회.
-    필터링/검색/페이징을 통한 효율적인 관리.
+    Spring Security와 JWT 토큰을 활용한 로그인 기능 구현
+    회원가입, 수정, 탈퇴 기능 구현
+    아이디 및 비밀번호 찾기 구현
   </p>
 
-- **FullCalendar API 연동**
+- **문의사항 : CRUD**
   <p>
-    컨트롤러 - 자바스크립트 - 페이지로 캘린더 API 연결 / 로직 처리.
+     문의사항 게시판의 질문 및 답변 C.R.U.D 구현
   </p>
 
-- **관리자페이지 UI/레이아웃**
+- **관리자페이지 회원 정보 구현**
   <p>
-    관리자 화면 디자인 구성
+    관리자 화면 회원 정보 구현
   </p>
 
 ### :bulb: 사용 기술
@@ -78,26 +79,42 @@
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white">
 </p>
 
-### :bulb: 예약 기능 화면
+### :bulb: 회원 기능
 
-- 예약 신청
+- 로그인 및 회원가입
 
-![image](https://github.com/user-attachments/assets/cc8ac9a2-0d75-4bb6-b9e1-161839823efe)
-
-
-- 사용자 예약 확인
-
-![image](https://github.com/user-attachments/assets/60266b86-be57-4f7d-98aa-abf2db0dadc5)
+![image.png](attachment:99085651-c236-4918-8901-a7eb6b7beb09:image.png)
 
 
-- 예약 관리
+- JWT 토큰 사용
 
-![image](https://github.com/user-attachments/assets/ecd83685-cbbc-445d-abd5-8c3f9602cfdb)
+![image.png](attachment:588e2674-6385-417d-9061-1730bc56563c:image.png)
+
+![image.png](attachment:db80b5cf-3bfa-4716-b0dd-de2b6449d48b:image.png)
+
+함수 형으로 구현하여 상태를 생성해 로딩시 데이터가 전달받은 이후에 페이지가 로드되도록 설계
 
 
-- 예약 관리 - 캘린더
+- 아이디 및 비밀번호 찾기
 
-![image](https://github.com/user-attachments/assets/951364d3-af84-4267-b9a5-c42761c1f629)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/dd3e8795-3317-4799-9913-bb2a708cb299/image.png)
+
+
+- 마이페이지(내정보)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/41b479e3-dbc4-41ac-b541-885d87f6c3ef/image.png)
+
+
+- 관리자 페이지(회원)
+  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/eac00d2a-37ce-4de5-9896-4d0b74101e12/image.png)
+
+
+- 문의사항 C.R.U.D
+  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/692c2870-68e4-4a81-b3d9-79004c629c19/image.png)
+
+
+- 마이페이지(문의내역)
+  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/acc91c65-c088-40a1-992e-45b27bc3b9fd/image.png)
 
 ---
 
