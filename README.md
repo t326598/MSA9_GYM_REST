@@ -82,39 +82,40 @@
 ### :bulb: 회원 기능
 
 - 로그인 및 회원가입
-
-![image.png](attachment:99085651-c236-4918-8901-a7eb6b7beb09:image.png)
-
+![image (8)](https://github.com/user-attachments/assets/c8d98712-32cf-41b0-bd03-2c90a4e2cd8d)
 
 - JWT 토큰 사용
+![image (7)](https://github.com/user-attachments/assets/18015ee8-d0e1-48b4-a490-7bf9036128c0)
 
-![image.png](attachment:588e2674-6385-417d-9061-1730bc56563c:image.png)
-
-![image.png](attachment:db80b5cf-3bfa-4716-b0dd-de2b6449d48b:image.png)
+![image (6)](https://github.com/user-attachments/assets/3442cd50-29fd-48cc-a6ef-b3e28851a31e)
 
 함수 형으로 구현하여 상태를 생성해 로딩시 데이터가 전달받은 이후에 페이지가 로드되도록 설계
 
 
 - 아이디 및 비밀번호 찾기
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/dd3e8795-3317-4799-9913-bb2a708cb299/image.png)
+![image (5)](https://github.com/user-attachments/assets/9a4e7b85-f2c0-41e2-b328-80503c3f3300)
 
 
 - 마이페이지(내정보)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/41b479e3-dbc4-41ac-b541-885d87f6c3ef/image.png)
+![image (4)](https://github.com/user-attachments/assets/e86c040b-4a58-4cfc-a618-4d8d58ebcd9f)
 
 
 - 관리자 페이지(회원)
-  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/eac00d2a-37ce-4de5-9896-4d0b74101e12/image.png)
+  
+![image (3)](https://github.com/user-attachments/assets/aae25a3e-ec29-4ec0-9b6c-96af0621e315)
 
 
 - 문의사항 C.R.U.D
-  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/692c2870-68e4-4a81-b3d9-79004c629c19/image.png)
+
+![image (2)](https://github.com/user-attachments/assets/056240fd-a1da-486a-902e-fd6805965459)
+
+![image (1)](https://github.com/user-attachments/assets/36f8cc1d-b6f0-4317-830a-6ae2e8bedbee)
 
 
 - 마이페이지(문의내역)
-  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/755fe88a-ec1a-4f79-be93-9a43db779b81/acc91c65-c088-40a1-992e-45b27bc3b9fd/image.png)
+![image](https://github.com/user-attachments/assets/6007fc3f-9f14-48a8-8214-8117bb6a8e1a)
 
 ---
 
